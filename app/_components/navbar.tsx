@@ -18,8 +18,8 @@ const navbar = () => {
             <Link href="/transactions" className={
                 pathname === "/transactions" ? "text-primary font-bold" : "text-muted-foreground"
             }>Transações</Link>
-            <Link href="/subscrition" className={
-                pathname === "/subscrition" ? "text-primary font-bold" : "text-muted-foreground"
+            <Link href="/subscription" className={
+                pathname === "/subscription" ? "text-primary font-bold" : "text-muted-foreground"
             }>Assinatura</Link> 
         </div>
         <UserButton showName />
