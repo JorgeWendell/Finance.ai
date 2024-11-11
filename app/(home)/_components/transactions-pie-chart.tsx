@@ -2,8 +2,7 @@
 
 import {
   PiggyBankIcon,
-  TrendingDownIcon,
-  TrendingUp,
+  TrendingDownIcon, 
   TrendingUpIcon,
 } from "lucide-react";
 import { Pie, PieChart } from "recharts";
