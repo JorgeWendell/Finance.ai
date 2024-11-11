@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  PiggyBankIcon,
-  TrendingDownIcon, 
-  TrendingUpIcon,
-} from "lucide-react";
+import { PiggyBankIcon, TrendingDownIcon, TrendingUpIcon } from "lucide-react";
 import { Pie, PieChart } from "recharts";
 
 import { Card, CardContent } from "@/app/_components/ui/card";
@@ -65,7 +61,7 @@ const TransactionPieChart = ({
     },
   ];
   return (
-    <Card className="flex flex-col p-12">
+    <Card className="flex flex-col p-6">
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}

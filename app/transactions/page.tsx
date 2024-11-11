@@ -6,11 +6,12 @@ import { db } from "../_lib/prisma";
 import Navbar from "../_components/navbar";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { ScrollArea } from "../_components/ui/scroll-area";
 
 const transationsPage = async () => {
-  const { userId } = await auth()
+  const { userId } = await auth();
   if (!userId) {
-    redirect("/login")
+    redirect("/login");
   }
   const transations = await db.transaction.findMany({
     where: {
@@ -19,14 +20,16 @@ const transationsPage = async () => {
   });
   return (
     <>
-    <Navbar />
-    <div className="p-6 space-y-6">
-      <div className="flex w-full justify-between items-center">
-        <h1 className="font-bold text-2xl">Transações</h1>
-        <AddTransactionButton />
+      <Navbar />
+      <div className="p-6 space-y-6 overflow-hidden">
+        <div className="flex w-full justify-between items-center">
+          <h1 className="font-bold text-2xl">Transações</h1>
+          <AddTransactionButton />
+        </div>
+        <ScrollArea>
+          <DataTable columns={transationsColumns} data={transations} />
+        </ScrollArea>
       </div>
-      <DataTable columns={transationsColumns} data={transations} />
-    </div>
     </>
   );
 };
