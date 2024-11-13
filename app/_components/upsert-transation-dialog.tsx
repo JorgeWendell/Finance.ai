@@ -44,7 +44,7 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UpsertTransaction } from "../_actions/add-transaction";
-import { trace } from "console";
+
 
 interface UpsertTransactionDialogProps {
   isOpen: boolean;
