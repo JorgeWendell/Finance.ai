@@ -13,8 +13,8 @@ const transationsPage = async () => {
   const { userId } = await auth();
   if (!userId) {
     redirect("/login");
-  };
-  
+  }
+
   const transations = await db.transaction.findMany({
     where: {
       userId,
@@ -30,7 +30,10 @@ const transationsPage = async () => {
           <AddTransactionButton userCanAddTransaction={userAddTransaction} />
         </div>
         <ScrollArea>
-          <DataTable columns={transationsColumns} data={transations} />
+          <DataTable
+            columns={transationsColumns}
+            data={JSON.parse(JSON.stringify(transations))}
+          />
         </ScrollArea>
       </div>
     </>
