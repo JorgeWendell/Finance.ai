@@ -7,17 +7,22 @@ import {
 import React from "react";
 import SummaryCard from "./summary-card";
 
-
 interface SummaryCards {
-    month: string;
-    balance: number;
-    depositTotal: number; 
-    expenseTotal: number;
-    investimentTotal: number;
+  month: string;
+  balance: number;
+  depositTotal: number;
+  expenseTotal: number;
+  investimentTotal: number;
+  userCanAddTransaction?: boolean;
 }
 
-const SummaryCards = async ({ balance, depositTotal, expenseTotal, investimentTotal }: SummaryCards) => {
-    
+const SummaryCards = async ({
+  balance,
+  depositTotal,
+  expenseTotal,
+  investimentTotal,
+  userCanAddTransaction,
+}: SummaryCards) => {
   return (
     <div className="space-y-6">
       <SummaryCard
@@ -25,6 +30,7 @@ const SummaryCards = async ({ balance, depositTotal, expenseTotal, investimentTo
         title="Saldo Disponível"
         amount={balance}
         size="large"
+        userCanAddTransaction={userCanAddTransaction}
       />
       <div className="grid grid-cols-3 gap-6">
         <SummaryCard
