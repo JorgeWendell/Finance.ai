@@ -26,9 +26,9 @@ const AiReportButton = ({ month }: AiReportButtonProps) => {
   const handleGenerateReportClick = async () => {
     try {
       setReportIsLoading(true);
-      const aiReport = await generateAiReport(month);
+      const aiReport = await generateAiReport({ month });
       setReport(aiReport);
-      await generateAiReport(month);
+      await generateAiReport({ month });
     } catch (error) {
       console.error(error);
     } finally {

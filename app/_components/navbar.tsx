@@ -3,9 +3,10 @@ import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import React from "react";
 
-const navbar = () => {
+const Navbar = () => {
   const pathname = usePathname();
   return (
     <nav className="flex justify-between px-8 py-4 border-b border-solid">
@@ -47,4 +48,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;

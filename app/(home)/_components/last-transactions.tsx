@@ -38,7 +38,7 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
       </CardHeader>
       <CardContent className="space-y-6">
         {lastTransactions.map((transaction) => (
-          <div className="flex justify-between items-center">
+          <div key={transaction.id} className="flex justify-between items-center">
             <div className="flex items-center gap-3">
               <div className="p-3  bg-white bg-opacity-[3%] rounded-lg">
                 <Image
